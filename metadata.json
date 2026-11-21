@@ -1,0 +1,9 @@
+{
+	"name": "HDR Toggle",
+	"description": "Toggle HDR with a keyboard shortcut or a Quick Settings button",
+	"uuid": "hdr-toggle@cissikatt.se",
+	"shell-version": [
+		"51"
+	],
+	"settings-schema": "org.gnome.shell.extensions.hdr-toggle"
+}

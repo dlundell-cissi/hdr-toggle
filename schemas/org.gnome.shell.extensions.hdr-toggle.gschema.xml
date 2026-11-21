@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.hdr-toggle" path="/org/gnome/shell/extensions/hdr-toggle/">
+    <key name="toggle-hdr-shortcut" type="as">
+      <default>['&lt;Super&gt;&lt;Alt&gt;h']</default>
+      <summary>Toggle HDR</summary>
+      <description>Keyboard shortcut to toggle HDR on or off</description>
+    </key>
+    <key name="target-displays" type="s">
+      <choices>
+        <choice value="all"/>
+        <choice value="primary"/>
+      </choices>
+      <default>'all'</default>
+      <summary>Target Displays</summary>
+      <description>Whether to toggle HDR on all supported displays or only the primary display</description>
+    </key>
+    <key name="persistent-apply" type="b">
+      <default>false</default>
+      <summary>Remember HDR state</summary>
+      <description>If true, the display configuration is saved by Mutter and restored the next time this monitor layout appears. If false, the change is temporary.</description>
+    </key>
+  </schema>
+</schemalist>

@@ -8,7 +8,7 @@ It talks to Mutter's `org.gnome.Mutter.DisplayConfig` D-Bus interface, the same 
 
 - GNOME Shell **51** (this is what `metadata.json` declares; other versions are untested)
 - A Wayland session with a display that Mutter reports as HDR capable
-- `glib-compile-schemas` if you install without `gnome-extensions pack`
+- `glib-compile-schemas` only if you copy the directory into place manually instead of using `gnome-extensions install`
 
 If none of the target displays reports HDR support, the Quick Settings button stays hidden and the shortcut does nothing.
 
@@ -27,7 +27,11 @@ Then log out and back in (required on Wayland after installing or changing an ex
 gnome-extensions enable hdr-toggle@cissikatt.se
 ```
 
-`gnome-extensions pack` picks up `extension.js`, `prefs.js`, `metadata.json` and the `schemas/` directory automatically and compiles the schema.
+`gnome-extensions pack` picks up the `schemas/` directory automatically. On GNOME 44 and later the installer compiles the schema itself, so only the `.gschema.xml` source needs to be shipped and the bundle normally contains no `gschemas.compiled`. You can check what ended up in the bundle with:
+
+```sh
+unzip -l hdr-toggle@cissikatt.se.shell-extension.zip
+```
 
 To install manually instead, copy the directory to `~/.local/share/gnome-shell/extensions/hdr-toggle@cissikatt.se/` and run `glib-compile-schemas schemas/` inside it.
 
